@@ -28,7 +28,7 @@
     </div>
   </div>
   <div class="movie-title">
-    <h2 class="scream"><?php echo $filmInfo[0]->Title; ?><div class="scare-o-meter"><span class="scare">TROUILLOMETRE</span></div>
+    <h2><?php echo $filmInfo[0]->Title; ?><div class="scare-o-meter"><span class="scare">TROUILLOMETRE</span></div>
     </h2>
     <p class="separator"></p>
     <p class="story"><?php echo $filmInfo[0]->Duration; ?></p>
