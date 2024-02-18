@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+@import "../css/header.css";
+
+$red-color : #660000;
+
+@font-face {
+    font-family: 'RedUndead';
+    src: url('redundead.ttf');
+    format: ('truetype');
+}
+
+
+body {
+    background-color: #252525;
+    width: 100%;
+    height : 100%;
+}
+
+h2 {
+    font-family: Redundead;
+    color: $red-color;
+}
+
+p {
+    color: white;
+}
+
+.banners {
+    display: flex;
+    justify-content: space-around;
+}
+
+

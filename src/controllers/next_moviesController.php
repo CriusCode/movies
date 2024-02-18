@@ -1,0 +1,4 @@
+<?php
+$allMoviesData=getAllFutureMovies();
+
+?>
