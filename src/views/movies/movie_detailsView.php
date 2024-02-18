@@ -59,11 +59,27 @@
     <h2>Quelques suggestions...</h2>
 
   </div>
+  <?php
+  if (!empty($filmInfo[0]->whysee)) { ?>
+    <div class="whysee">
+      <h2>Pourquoi faut-il le voir?</h2>
+      <p><?php echo $filmInfo[0]->whysee; ?></p>
+    </div>
+  <?php } ?>
+
+  <?php
+  if (!empty($filmInfo[0]->whynotsee)) { ?>
+    <div class="whynotsee">
+      <h2>Pourquoi ne faut-il pas le voir?</h2>
+      <p><?php echo $filmInfo[0]->whynotsee; ?></p>
+    </div>
+  <?php } ?>
+</div>
 </div>
 
 <div class="slider-suggestions">
   <div class="slider">
-  <!-- Retrieve and shows the movies suggested via the categories, by ID -->
+    <!-- Retrieve and shows the movies suggested via the categories, by ID -->
     <?php
     foreach ($recommandationMovie as $movie) { ?>
       <div class="slide"><a href="<?php echo $router->generate('details') . $movie->id; ?>"><img src="<?php echo $movie->MoviePoster; ?>" alt="Movie 1" id="slide1"></a></div>
