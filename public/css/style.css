@@ -908,31 +908,64 @@ justify-content: flex-end;
   padding: 0px;
   height: 100%;
 }
-#Awesome{
+.sticky-text{
+  width: 70px;
+  position: absolute;
+  font-size: 8px;
+  top: 60px;
+  left: 20px;
+  z-index: -1;
+  transform: rotate(5deg);
+}
+
+.sticky-text1{
+  width: 100px;
+  position: absolute;
+  font-size: 10px;
+  top: 60px;
+  left: 20px;
+  z-index: -1;
+  transform: rotate(-5deg);
+}
+
+.Awesome{
 	position: relative;
 	width: 200px;
 	height: 200px;
 	margin: 0 auto;
   backface-visibility: hidden;
 }
-
-#Awesome .sticky{
+.stickersgroup1 {
+  display: inline-block;
+}
+.Chucky {
+  display: block;
+  position: absolute;
+  top: 230px;
+  z-index: 9;
+  left: 190px;
+  transform: scale(1.6);
+}
+.Awesome .sticky{
 	transform: rotate(-15deg);
 }
 
-#Awesome:hover .sticky{
-	transform: rotate(2deg);
+.Awesome:hover .sticky{
+	transform: rotate(-10deg);
 }
 
-#Awesome .sticky {
+.Awesome .sticky {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width:180px;
 	height: 180px;
 }
-
-#Awesome .circle_wrapper{
+.Awesome img {
+  width: 140px;
+  height: 140px;
+}
+.Awesome .circle_wrapper{
 	position: absolute;
 	width: 140px;
 	height: 180px;
@@ -941,7 +974,7 @@ justify-content: flex-end;
 	overflow: hidden;
 }
 
-#Awesome .circle{
+.Awesome .circle{
 	position: absolute;
 	width: 140px;
 	height:  140px;
@@ -949,47 +982,60 @@ justify-content: flex-end;
   border-radius: 999px;
 }
 
-#Awesome .back{
-	height: 10px;
+.Awesome .back{
+	height: 12px;
 	top: 30px;
 }
 
-#Awesome:hover .back{
+.Awesome:hover .back{
 	height: 90px;
 	top: 110px;
 }
 
-#Awesome .back .circle{
-	margin-top: -130px;
+.Awesome .back .circle{
+	margin-top: -133px;
 }
 
-#Awesome:hover .back .circle{
+.Awesome:hover .back .circle{
 	margin-top: -50px;
 }
 
-#Awesome .back .circle img {
-  filter: brightness(33) contrast(0) invert(1);
+.Awesome:hover .back .circle img {
+  transform: rotate(-180deg) scaleX(-1) !important;
+}
+.Awesome .back .circle img {
+  filter: contrast(3%) brightness(1);
+  transform: rotate(180deg) scaleX(-1);
 }
 
-#Awesome .front{
+.Awesome .front{
 	height: 150px;
 	bottom: 0;
 	top: auto;
 	
 	-webkit-box-shadow: 0 -140px 20px -140px rgba(0,0,0,.3);
 }
-
-#Awesome:hover .front{
+.scream img {
+  width: 112px !important;
+}
+.scream {
+  transform: scale(2);
+  position: absolute;
+  top: 240px;
+  z-index: 9;
+  right: 125px;
+}
+.Awesome:hover .front{
 	height: 70px;
 	
 	-webkit-box-shadow: 0 -60px 10px -60px rgba(0,0,0,.1);
 }
 
-#Awesome .front .circle{
+.Awesome .front .circle{
 	margin-top: -5px;
 }
 
-#Awesome:hover .front .circle{
+.Awesome:hover .front .circle{
 	margin-top: -90px;
 	background-position: 0 100px;
 }

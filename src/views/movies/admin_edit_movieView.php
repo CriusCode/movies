@@ -53,7 +53,7 @@
     </div>
     <div class="form-group mb-4">
             <label for="whynotsee">Trouillomètre :</label>
-            <input type="text" class="form-control" name='scare-o-meter' placeholder="0/100">
+            <input type="text" class="form-control" name='scareometer' placeholder="0/100">
         </div>
     <div class="form-group mb-4">
         <label for="exampleFormControlFile1">Lien embed YouTube du trailer :</label>

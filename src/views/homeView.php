@@ -32,7 +32,7 @@
     </div>
     <!-- <img src="<?= $URLsticker ?>/blood.png" alt="Coulée de sang" class="bloodstain1" /> -->
     <div class="stickersgroup1">
-        <div id="Awesome" class="anim750">
+        <div class="anim750 Awesome Chucky">
             <div class="sticky anim750">
                 <div class="front circle_wrapper anim750">
                     <div class="circle anim750">
@@ -40,19 +40,37 @@
                     </div>
                 </div>
             </div>
+            <p class="sticky-text1">"Salut, je m'appelle Chucky, tu veux jouer avec moi?"</p>
             <div class="sticky anim750">
                 <div class="back circle_wrapper anim750">
                     <div class="circle anim750">
-                    <img src="<?= $URLsticker ?>/chucky_sticker.png" id="chucky1" alt="sticker Chucky" class="sticker-container" />
+                        <img src="<?= $URLsticker ?>/chucky_sticker.png" id="chucky1" alt="sticker Chucky" class="sticker-container" />
                     </div>
                 </div>
             </div>
         </div>
-        <img src="<?= $URLsticker ?>/freddy_krueger.png" id="freddy" alt="sticker Michael Myers" />
-        <img src="<?= $URLsticker ?>/michael_myers_sticker.png" id="halloween" alt="sticker Michael Myers" />
-        <img src="<?= $URLsticker ?>/ghostface_sticker.png" id="scream" alt="sticker Ghostface" />
-        <img src="<?= $URLsticker ?>/tape.png" id="tape" alt="VHS rose style kawaii" />
-        <img src="<?= $URLsticker ?>/ikwydls.png" id="ikwydls" alt="I know what you did last summer" />
+        <div class="anim750 Awesome scream">
+            <div class="sticky anim750">
+                <div class="front circle_wrapper anim750">
+                    <div class="circle anim750">
+                        <img src="<?= $URLsticker ?>/ghostface_sticker.png" alt="sticker Ghostface" />
+                    </div>
+                </div>
+            </div>
+            <p class="sticky-text">"Quel est ton film d'horreur préféré ?"</p>
+            <div class="sticky anim750">
+                <div class="back circle_wrapper anim750">
+                    <div class="circle anim750">
+                       <img src="<?= $URLsticker ?>/ghostface_sticker.png" alt="sticker Ghostface" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="<?= $URLsticker ?>/freddy_krueger.png" id="freddy" alt="sticker Michael Myers" />
+    <img src="<?= $URLsticker ?>/michael_myers_sticker.png" id="halloween" alt="sticker Michael Myers" />
+    <img src="<?= $URLsticker ?>/tape.png" id="tape" alt="VHS rose style kawaii" />
+    <img src="<?= $URLsticker ?>/ikwydls.png" id="ikwydls" alt="I know what you did last summer" />
     </div>
     <div id="suggestion-container">
         <h2>Une suggestion ?</h2>
@@ -79,9 +97,9 @@
                 <article class="post">
                     <div class="post-content">
                         <h2><?php echo $singleCritique->Title; ?></h2>
-                            <?php
-                            echo ($singleCritique->critique) ? substr($singleCritique->critique, 0, 500) . '...' : 'Critique à venir ...';
-                            echo ($singleCritique->published); ?>
+                        <?php
+                        echo ($singleCritique->critique) ? substr($singleCritique->critique, 0, 500) . '...' : 'Critique à venir ...';
+                        echo ($singleCritique->published); ?>
                     </div>
                 </article>
             <?php
