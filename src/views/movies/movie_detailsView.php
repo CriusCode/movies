@@ -44,21 +44,6 @@
 
 <div class="review-suggestion">
   <div class="my-review">
-    <h2>Ma critique :</h2>
-    <!-- Takes the first review if it exists, else it shows a predefined message-->
-    <p><?php
-        if (!empty($filmInfo[0]->critique)) {
-          echo $filmInfo[0]->critique;
-        } else {
-          echo "Critique à venir...";
-        }
-        ?>
-    </p>
-  </div>
-  <div class="suggestions-like">
-    <h2>Quelques suggestions...</h2>
-
-  </div>
   <?php
   if (!empty($filmInfo[0]->whysee)) { ?>
     <div class="whysee">
@@ -74,6 +59,22 @@
       <p><?php echo $filmInfo[0]->whynotsee; ?></p>
     </div>
   <?php } ?>
+    <h2>Ma critique :</h2>
+    <!-- Takes the first review if it exists, else it shows a predefined message-->
+    <p><?php
+        if (!empty($filmInfo[0]->critique)) {
+          echo $filmInfo[0]->critique;
+        } else {
+          echo "Critique à venir...";
+        }
+        ?>
+    </p>
+  </div>
+  <div class="suggestions-like">
+    <h2>Quelques suggestions...</h2>
+
+  </div>
+
 </div>
 </div>
 
