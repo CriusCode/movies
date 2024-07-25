@@ -6,9 +6,7 @@ function checkEmail (string $email): bool{
 
 // Checks if the informations are valid, if they're not empty
 $errorMessage = [
-    'email' => false,
-    'pwd' => false,
-    'pwdConfirm' => false,
+    'email' => false
 ];
 
 // E-mail format
@@ -23,24 +21,13 @@ if (!empty($_POST)) {
     }
 }
 
-// Password format
-
-if (!empty($_POST['pwd'])) {
-    $regex = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{12,}$/';
-    if (!preg_match($regex, $_POST['pwd'])) {
-        $errorMessage['pwd'] = 'Merci de respecter le format indiqué.';
-    } else if ($_POST['pwd'] !== $_POST['pwdConfirm']) {
-        $errorMessage['pwdConfirm'] = 'Les mots de passe ne sont pas indentiques.';
-    }
-}
-
 // Save user in database
-if (!empty($_POST['email']) && !empty($_POST['pwd']) && !empty($_POST['pwdConfirm'])) {
-    if (!$errorMessage['email'] && !$errorMessage['pwd'] && !$errorMessage['pwdConfirm']) {
+if (!empty($_POST['email'])) {
+    if (!$errorMessage['email']) {
 
         if (!empty($_GET['id'])) {
             updateUser();
-            alert('Un utilisateur a bien été modifié.', 'success');
+            alert('L\'utilisateur a bien été modifié.', 'success');
         } else {
             addUser();
             header('Location: ' . $router->generate('users'));
@@ -52,8 +39,11 @@ if (!empty($_POST['email']) && !empty($_POST['pwd']) && !empty($_POST['pwdConfir
 } else if (!empty($_GET['id'])) {
     // Read user data and save to $_POST
     $_POST = (array) getUser();
-} else {
-    alert('Merci de remplir tous les champs obligatoires.');
+}
+if(isset($_POST['email'])) {
+    if (empty($_POST['email'])) {
+        alert('Merci de renseigner tous les champs obligatoires');
+    }
 }
 
 $globalMessage = ['class' => 'd-none', 'message' => 'false'];

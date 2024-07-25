@@ -1,6 +1,5 @@
 <?php get_header('Editer un utilisateur', 'admin'); ?>
 
-
 <div class="mb-4">
     <h1>Editer un utilisateur</h1>
 
@@ -14,22 +13,19 @@
             <?= $error['message']; ?>
         </div>
         <div class="mb-4">
-            <label for="email">Mot de passe :*</label>
-            <input type="password" name="pwd" id="pwd" value="" class="form-control id-invalid" <?= $error['class']; ?> >
-            <p class="form-text mb-0">Les règles de mot de passe</p>
-            <p class="invalid-feedback">Messages d'erreur</p>
-            <?= $error['message']; ?>
+             <label>
+                Statut de l'utilisateur
+             </label>
+             <select name="role_id" class="form-select">
+                <option value="1" <?= (getValue('role_id')==1) ? 'selected' : ''; ?>>Utilisateur normal</option>
+                <option value="2" <?= (getValue('role_id')==2) ? 'selected' : ''; ?>>Administrateur</option>
+             </select>
         </div>
-        <div class="mb-4">
-            <label for="email">Confirmation du mot de passe :*</label>
-            <input type="password" name="pwdConfirm" id="pwd-confirm" value="" class="form-control id-invalid" <?= $error['class']; ?> >
-            <?= $error['message']; ?>
         </div>
         <div>
             <input type="submit" class="btn btn-success" value="Sauvegarder">
         </div>
     </form>
 </div>
-
 
 <?php get_footer('admin'); ?>

@@ -19,6 +19,7 @@
                 <td class="text-center align-middle">
                     <a class="btn btn-warning" href="<?= $router->generate('editUser', ['id' =>  $user->id]); ?>">Editer</a>
                     <a class="btn btn-danger" href="<?= $router->generate('deleteUser', ['id' =>  $user->id]); ?>">Supprimer</a>
+                    
                 </td>
             </tr>
         <?php } ?>

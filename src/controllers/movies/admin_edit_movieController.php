@@ -59,7 +59,9 @@ class AdminEditMovieController
     }
 }
 
-
+function escapeString($string) {
+    return (empty($string)) ? " " : htmlspecialchars($string);
+}
 
 class AdminEditMovie
 {
@@ -78,3 +80,5 @@ class AdminEditMovie
         // code to update a movie
     }
 }
+
+

@@ -33,7 +33,9 @@ CREATE TABLE `users` (
   `pwd` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `role_id` int NOT NULL,
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `lastLogin` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `username` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

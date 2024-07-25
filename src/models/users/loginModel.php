@@ -4,7 +4,7 @@
 function checkUserAccess()
 {
 	global $db;
-	$sql = 'SELECT id, pwd FROM users WHERE email = :email';
+	$sql = 'SELECT id, pwd FROM users WHERE email = :email AND role_id = 2';
 	$query = $db->prepare($sql);
 	$query->execute(['email' => $_POST['email']]);
 

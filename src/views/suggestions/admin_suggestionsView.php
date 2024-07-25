@@ -11,15 +11,12 @@
     </thead>
 
     <tbody>
-    <!-- Loop that fetch and displays the selected informations from the database -->
-        <?php
-        foreach ($allMovieSuggestions as $movieSuggestion) {
-        ?>
+        <?php foreach ($allMovieSuggestions as $movieSuggestion) { ?>
             <tr>
-                <td><?php echo $movieSuggestion->suggestionID; ?></td>
-                <td><?php echo $movieSuggestion->movieName; ?></td>
-                <td><?php echo $movieSuggestion->username; ?></td>
-                <td><?php echo $movieSuggestion->created; ?></td>
+                <td><?php echo htmlspecialchars($movieSuggestion->suggestionID, ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?php echo htmlspecialchars($movieSuggestion->movieName, ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?php echo htmlspecialchars($movieSuggestion->username, ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?php echo htmlspecialchars($movieSuggestion->created, ENT_QUOTES, 'UTF-8'); ?></td>
             </tr>
         <?php } ?>
     </tbody>

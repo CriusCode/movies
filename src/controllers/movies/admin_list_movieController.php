@@ -1,3 +1,4 @@
 <?php 
 
 $allMovies = getAllMovies($db);
+

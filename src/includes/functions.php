@@ -94,8 +94,6 @@ function limitAttemps()
     }
 }
 
-
-
 // Function that automatically disconnect a user or an admin for inactivity after a certain time
 function logoutTimer ()
 {

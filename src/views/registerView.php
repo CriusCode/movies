@@ -37,30 +37,31 @@
 <div class="d-flex align-items-center py-4 bg-body-tertiary vertical-center">
     <form action="" method="post" class="form-signin w-100 m-auto">
         <h1 class="h3 mb-3 fw-normal text-center">S'inscrire</h1>
+
         <div class="form-floating">
-            <!-- For every input, the function will check if it's empty or not -->
             <?php $error = checkEmptyFields('username'); ?>
-            <input type="username" name="username" class="form-control mb-2 <?= $error['class']; ?>" id="floatingInput" placeholder="Pseudo">
+            <input type="text" name="username" class="form-control mb-2 <?= $error['class']; ?>" id="floatingInput" placeholder="Pseudo">
             <label for="floatingInput">Pseudo</label>
             <?= $error['message']; ?>
         </div>
+
         <div class="form-floating">
             <?php $error = checkEmptyFields('email'); ?>
             <input type="email" name="email" class="form-control mb-2 rounded <?= $error['class']; ?>" id="floatingInput" placeholder="Email">
             <label for="floatingInput">Email</label>
             <?= $error['message']; ?>
         </div>
+
         <div class="form-floating">
             <?php $error = checkEmptyFields('pwd'); ?>
             <input type="password" name="pwd" class="form-control mb-2 rounded <?= $error['class']; ?>" id="floatingPassword" placeholder="Mot de passe">
             <label for="floatingPassword">Mot de passe</label>
             <?= $error['message']; ?>
         </div>
+
         <div class="form-floating">
-            <?php $error = checkEmptyFields('pwd'); ?>
-            <input type="password-confirmation" name="pwd" class="form-control mb-2 <?= $error['class']; ?>" id="floatingPassword" placeholder="Confirmation de mot de passe">
-            <label for="floatingPassword">Confirmation du mot de passe</label>
-            <?= $error['message']; ?>
+            <input type="password" name="pwdConfirm" class="form-control mb-2" id="floatingPasswordConfirm" placeholder="Confirmation du mot de passe">
+            <label for="floatingPasswordConfirm">Confirmation du mot de passe</label> 
         </div>
         <button class="btn btn-dark w-100 p-2" type="submit">Je m'inscris sur Terrorama</button>
         <img src="<?= $URLsticker ?>/scream_login.png" />

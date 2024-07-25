@@ -36,7 +36,7 @@ function addUser()
 	];
 
 	try {
-		$sql = 'INSERT INTO users (id, email, pwd, role_id) VALUES (UUID(), :email, :pwd, :role_id)';
+		$sql = 'INSERT INTO users (email, pwd, role_id) VALUES (:email, :pwd, :role_id)';
 		$query = $db->prepare($sql);
 		$query->execute($data);
 		alert('Un utilisateur a bien été ajouté.', 'success');
@@ -58,15 +58,15 @@ function updateUser()
 	global $db;
 	$data = [
 		'email' => $_POST['email'],
-		'pwd' => password_hash($_POST['pwd'], PASSWORD_DEFAULT),
+		'role_id' => $_POST['role_id'],
 		'id' => $_GET['id']
 	];
 	try {
-		$sql = 'UPDATE users SET email = :email, pwd = :pwd, modified = NOW() WHERE id = :id';
+		$sql = 'UPDATE users SET email = :email, role_id=:role_id, modified = NOW() WHERE id = :id';
 		$query = $db->prepare($sql);
 		$query->execute($data);
 	} catch (PDOException $e) {
-		if ($_ENV['DEGUB'] == 'true') {
+		if ($_ENV['DEBUG'] == 'true') {
 			dump($e->getMessage());
 			die;
 		} else {
@@ -80,7 +80,7 @@ function getUser()
 	global $db;
 
 	try {
-		$sql = 'SELECT email FROM users WHERE id = :id';
+		$sql = 'SELECT email, role_id FROM users WHERE id = :id';
 		$query = $db->prepare($sql);
 		$query->execute(['id' => $_GET['id']]);
 

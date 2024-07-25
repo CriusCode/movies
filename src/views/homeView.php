@@ -77,7 +77,7 @@
         <p>Chaque semaine, je choisirais un film parmi vos recommandations, et écrirais une critique dessus !</p>
         <div class="to-flip">
             <div class="form-floating face-one">
-                <input type="text" class="form-control mb-1 mt-2 rounded" id="floatingInput" placeholder="Envie que j'écrive une critique sur un film en particulier ? Ou tout simplement, de tenter de me faire trembler ? C'est ici !" />
+                <input type="text" class="form-control mb-1 mt-2 rounded" id="floatingInput" placeholder="Envie que j'écrive une critique sur un film en particulier ? Ou tout simplement, de tenter de me faire trembler ? C'est ici !"  required maxlength="255"/>
                 <label for="floatingInput">Envie que j'écrive une critique sur un film en particulier ? Ou tout simplement, de tenter de me faire trembler ? C'est ici !</label>
             </div>
             <div class="face-two">

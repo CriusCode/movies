@@ -5,11 +5,11 @@ function deleteUser()
 {
     try {
         global $db;
-        $sql = 'DELETE * FROM users WHERE id = :id';
+        $sql = 'DELETE FROM users WHERE id = :id';
         $query = $db->prepare($sql);
         $query->execute(['id' => $_GET['id']]);
 
-        alert('L\utilisateur a bien été supprimé.', 'success');
+        alert('L\'utilisateur a bien été supprimé.', 'success');
     } catch (PDOException $e) {
         if ($_ENV['DEBUG'] == 'true') {
             var_dump($e->getMessage());

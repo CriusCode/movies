@@ -21,6 +21,15 @@ function getAllCategories() {
     return $query->fetchAll();
 }
 
+function getMovieById($idMovie) {
+    global $db;
+    $sql = 'SELECT * FROM movies WHERE id=:id_movie';
+    $query = $db->prepare($sql);
+    $query->bindParam(':id_movie', $idMovie, PDO::PARAM_INT);
+    $query->execute();
+    return $query->fetchAll();
+}
+
 // Function that allows to add a new movie to the database
 function addMovie($urlImage): bool
 {
@@ -73,16 +82,18 @@ function updateMovie(): bool
         'title' => $_POST['title'],
         'releaseDate' => $_POST['releaseDate'],
         'synopsis' => $_POST['synopsis'],
-        'category' => $_POST['category'],
+        'category' => join(',', $_POST['categories']),
         'director' => $_POST['director'],
-        'rating' => $_POST['rating'],
-        'duration' => $_POST['duration'],
-        'trailer' => $_POST['trailer'],
-        'coverImage' => $_POST['coverImage'],
+        'rating' => $_POST['scareometer'],
+        'id' => $_GET['id'],
+        'trailer' => $_POST['ytlink'],
+        'age' => $_POST['age-restriction'],
+        'critique' => $_POST['critique'],
+        'duree' => $_POST['duration']
     ];
 
     try {
-        $sql = 'UPDATE movies SET title = :title, releaseDate = :releaseDate, synopsis = :synopsis, category = :category, director = :director, rating  WHERE id = :id';
+        $sql = 'UPDATE movies SET Title = :title, ReleaseDate = :releaseDate, Synopsis = :synopsis, Category = :category, Director = :director, scareometer = :rating, Trailer = :trailer, ageRestriction=:age, critique = :critique, Duration = :duree  WHERE id = :id';
         $query = $db->prepare($sql);
         $query->execute($data);
     } catch (PDOException $e) {

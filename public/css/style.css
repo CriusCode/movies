@@ -1,4 +1,4 @@
-@import "/public/css/header.css";
+@import "header.css";
 
 * {
   box-sizing: border-box;
@@ -390,7 +390,7 @@ h2 #portrait-titre {
 .actress {
   width: calc(
     33.33% - 20px
-  ); /* Pour avoir trois colonnes et un espace entre les colonnes */
+  );
   margin-bottom: 20px;
   padding: 15px;
   border: 1px solid #ccc;
@@ -754,7 +754,7 @@ h2 #portrait-titre {
 }
 
 .slide {
-  min-width: 35%; /* Modifie la largeur selon le nombre d'images visibles */
+  min-width: 35%;
 }
 
 .prev-btn,
@@ -889,25 +889,16 @@ display: flex;
 justify-content: flex-end;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .anim750{
   transition: all 750ms ease-in-out;
 }
+
 .sticker-container {
   width: 100%;
   padding: 0px;
   height: 100%;
 }
+
 .sticky-text{
   width: 70px;
   position: absolute;
@@ -935,9 +926,11 @@ justify-content: flex-end;
 	margin: 0 auto;
   backface-visibility: hidden;
 }
+
 .stickersgroup1 {
   display: inline-block;
 }
+
 .Chucky {
   display: block;
   position: absolute;
@@ -946,6 +939,7 @@ justify-content: flex-end;
   left: 190px;
   transform: scale(1.6);
 }
+
 .Awesome .sticky{
 	transform: rotate(-15deg);
 }
@@ -961,6 +955,7 @@ justify-content: flex-end;
 	width:180px;
 	height: 180px;
 }
+
 .Awesome img {
   width: 140px;
   height: 140px;
@@ -1003,6 +998,7 @@ justify-content: flex-end;
 .Awesome:hover .back .circle img {
   transform: rotate(-180deg) scaleX(-1) !important;
 }
+
 .Awesome .back .circle img {
   filter: contrast(3%) brightness(1);
   transform: rotate(180deg) scaleX(-1);
@@ -1015,9 +1011,11 @@ justify-content: flex-end;
 	
 	-webkit-box-shadow: 0 -140px 20px -140px rgba(0,0,0,.3);
 }
+
 .scream img {
   width: 112px !important;
 }
+
 .scream {
   transform: scale(2);
   position: absolute;
@@ -1025,6 +1023,7 @@ justify-content: flex-end;
   z-index: 9;
   right: 125px;
 }
+
 .Awesome:hover .front{
 	height: 70px;
 	
@@ -1039,3 +1038,7 @@ justify-content: flex-end;
 	margin-top: -90px;
 	background-position: 0 100px;
 }
+
+
+/* RESPONSIVE  */
+

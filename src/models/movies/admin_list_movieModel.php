@@ -3,7 +3,7 @@
 function getAllMovies($db)
 {
     global $db;
-    $sql = 'SELECT Title, MoviePoster FROM movies';
+    $sql = 'SELECT Title, MoviePoster, id FROM movies';
     $query = $db->prepare($sql);
     $query->execute();
 
